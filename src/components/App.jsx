@@ -19,7 +19,6 @@ const App = () => {
   }
 
   const addContacts = newContact => {
-    console.log('newContact', newContact);
     ifExsistContact(newContact.name)
       ? alert(`${newContact.name} is already in contacts`)
       :
@@ -27,14 +26,12 @@ const App = () => {
   }
 
   const onFilterChange = e => {
-    console.log(e.currentTarget.value);
     setDataFilter(e.currentTarget.value);
   }
   
   const onFilteredContacts = () => {
     if(dataFilter){
     const normalisedContacts = dataFilter.toLowerCase();
-    console.log('normalisedContacts', normalisedContacts);
       return contacts.filter(({ name }) => name.toLowerCase().includes(normalisedContacts))
     }
     return contacts
